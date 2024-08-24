@@ -1,5 +1,5 @@
 function AppTodo (){
-return <div class="row">
+return <div class="row my-row">
 <div class="col-6">
   <input type ="text" placeholder = "Enter Todo here" />
 </div>
@@ -7,7 +7,7 @@ return <div class="row">
   <input type = "date" />
 </div>
 <div class ="col-2">
-<button type="button" class="btn btn-success">Add</button>
+<button type="button" class="btn btn-success my-button">Add</button>
 </div>
 </div>
 }
