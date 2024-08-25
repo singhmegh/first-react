@@ -1,0 +1,14 @@
+.my-item{
+    background-color: bisque;
+}
+
+.my-span{
+    font-weight: 600;
+    color: rgb(255, 172, 5);
+}
+
+.heading{
+    background-color: rgb(83, 49, 7);
+    color: antiquewhite;
+    font-weight: 600;
+}

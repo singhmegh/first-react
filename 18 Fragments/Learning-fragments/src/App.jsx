@@ -10,7 +10,7 @@ function App() {
   return (
     
     <>
-      <h1>Healthy food items</h1>
+      <h1 className="heading">Healthy food items</h1>
      <ErrorMessages items={foodItems}></ErrorMessages>
       <FoodItems items ={foodItems}></FoodItems>
     </>
