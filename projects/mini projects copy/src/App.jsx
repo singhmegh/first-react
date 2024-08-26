@@ -16,7 +16,7 @@ function App() {
     },
     {
       name : "Like this vedio",
-      dueDate : "4/9/2024"
+      dueDate : "4/9/2024",
     }
   ];
 
@@ -24,7 +24,7 @@ function App() {
     <center className="todo-container">
       <AppName></AppName>
       <AppTodo></AppTodo>
-      <TodoItems todoItem={todoItem}></TodoItems>
+      <TodoItems todoItem ={todoItem}></TodoItems>
     </center>
   );
 }

@@ -1,22 +1,11 @@
-h1{
-    font-weight: 700;
-    font-size: 45px;
-    margin: 10px;
-    margin-bottom: 20px;
-}
-input{
-    width: 30%;
-    
-
-}
-.items-container{
-    text-align:center;
+input {
+  width: 30%;
 }
 
-.my-row{
-    margin: 10px 5px;
+.my-row {
+  margin: 10px 5px;
 }
 
-.my-button{
-    min-width: 80px;
+.my-button {
+  min-width: 80px;
 }
