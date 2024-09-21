@@ -19,6 +19,7 @@ const ButtonsContainer = ({ onButtonClick }) => {
     "9",
     "0",
     ".",
+  
   ];
 
   return (

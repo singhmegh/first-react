@@ -1,4 +1,4 @@
-function AppTodo (){
+function AppTodo ({onNewItem}){
 return <div className="row my-row">
 <div className="col-6">
   <input type ="text" placeholder = "Enter Todo here" />
@@ -7,7 +7,7 @@ return <div className="row my-row">
   <input type = "date" />
 </div>
 <div className ="col-2">
-<button type="button" className="btn btn-success my-button">Add</button>
+<button type="button" className="btn btn-success my-button" onClick={() => onNewItem("a" ,"b")}>Add</button>
 </div>
 </div>
 }

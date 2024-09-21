@@ -6,10 +6,13 @@ import { useState } from "react";
 function App() {
 const [calVal , setCalVal] = useState("");
 const onButtonClick = (buttonText) =>{
-  if (buttonText === 'C'){
-
-  } else if ( buttonText ===  '='){
-}else {
+  if (buttonText === "c"){
+setCalVal("");
+  } else if ( buttonText === "="){
+   const result =eval(calVal) ;     //eval is a method that evaluavate itself 
+   setCalVal(result);
+   } 
+   else {
   const newDisplayValue = calVal + buttonText;
   setCalVal(newDisplayValue);
 }
