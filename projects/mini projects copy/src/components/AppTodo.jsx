@@ -1,35 +1,31 @@
-import { useState } from "react";
+import { useRef } from "react";
 import { BiMessageAdd } from "react-icons/bi";
 
 function AppTodo({ onNewItem }) {
-  const [todoName, setTodoName] = useState("");
-  const [dueDate, setDueDate] = useState("");
+  const todoNameElement = useRef();
+  const dueDateElement = useRef();
 
-  const handleNameChange = (event) => {
-    setTodoName(event.target.value);
-  };
-  const handleDateChange = (event) => {
-    setDueDate(event.target.value);
-  };
-  const handleAddButtonClicked = () => {
+  const handleAddButtonClicked = (event) => {
+    event.preventDefault();
+    const todoName = todoNameElement.current.value;
+    const dueDate = dueDateElement.current.value;
+    todoNameElement.current.value ="";
+    dueDateElement.current.value ="";
     onNewItem(todoName, dueDate);
-    setDueDate("");
-    setTodoName("");
-  }
+  };
   return (
-    <div className="row my-row">
+    <form className="row my-row">
       <div className="col-6">
         <input
           type="text"
+          ref={todoNameElement}
           placeholder="Enter Todo here"
-          value = {todoName}          //value set the default value
-          onChange={handleNameChange}
+          
         />
       </div>
       <div className="col-4">
         <input type="date" 
-        value={dueDate}
-        onChange={handleDateChange} />
+        ref = {dueDateElement} />
       </div>
       <div className="col-2">
         <button
@@ -40,7 +36,7 @@ function AppTodo({ onNewItem }) {
           <BiMessageAdd />
         </button>
       </div>
-    </div>
+    </form>
   );
 }
 export default AppTodo;

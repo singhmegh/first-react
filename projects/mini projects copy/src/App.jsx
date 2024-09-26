@@ -10,25 +10,25 @@ function App() {
   const [todoItems, setTodoItems] = useState([]);
 
   const handleNewItem = (itemName, itemDueDate) => {
-   
-    const newTodoItems = [
-      ...todoItems,
+    setTodoItems((currValue) => [
+      ...currValue,            //spread operator without this array ke andar array ban jata hai
       { name: itemName, dueDate: itemDueDate },
-    ];
-    setTodoItems(newTodoItems);
+    ]);
   };
 
-  const handledeleteitem = (todoItemName) =>{
-    const newTodoItems = todoItems.filter((item)=> item.name !== todoItemName);
+  const handledeleteitem = (todoItemName) => {
+    const newTodoItems = todoItems.filter((item) => item.name !== todoItemName);
     setTodoItems(newTodoItems);
-    
-  }
+  };
   return (
     <center className="todo-container">
       <AppName></AppName>
       <AppTodo onNewItem={handleNewItem}></AppTodo>
       {todoItems.length === 0 && <WelcomeMessage></WelcomeMessage>}
-      <TodoItems todoItem={todoItems} onDeleteClick={handledeleteitem}></TodoItems>
+      <TodoItems
+        todoItem={todoItems}
+        onDeleteClick={handledeleteitem}
+      ></TodoItems>
     </center>
   );
 }
