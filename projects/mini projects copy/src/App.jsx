@@ -10,28 +10,32 @@ import { TodoItemsContext } from "./Store/todo-items-store";
 function App() {
   const [todoItems, setTodoItems] = useState([]);
 
-  const handleNewItem = (itemName, itemDueDate) => {
+  const addNewItem = (itemName, itemDueDate) => {
     setTodoItems((currValue) => [
-      ...currValue,            //spread operator without this array ke andar array ban jata hai
+      ...currValue, //spread operator without this array ke andar array ban jata hai
       { name: itemName, dueDate: itemDueDate },
     ]);
   };
 
-  const handledeleteitem = (todoItemName) => {
+  const deleteItem = (todoItemName) => {
     const newTodoItems = todoItems.filter((item) => item.name !== todoItemName);
     setTodoItems(newTodoItems);
   };
+
   return (
-    <TodoItemsContext.Provider>
-    <center className="todo-container">
-      <AppName></AppName>
-      <AppTodo onNewItem={handleNewItem}></AppTodo>
-     <WelcomeMessage todoItems={todoItems}></WelcomeMessage>
-      <TodoItems
-        todoItem={todoItems}
-        onDeleteClick={handledeleteitem}
-      ></TodoItems>
-    </center>
+    <TodoItemsContext.Provider
+      value={{
+        todoItems: todoItems /*array*/,
+        addNewItem: addNewItem /*methods*/,
+        deleteItem: deleteItem,
+      }}
+    >
+      <center className="todo-container">
+        <AppName></AppName>
+        <AppTodo></AppTodo>
+        <WelcomeMessage></WelcomeMessage>
+        <TodoItems></TodoItems>
+      </center>
     </TodoItemsContext.Provider>
   );
 }
